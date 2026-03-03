@@ -5,30 +5,31 @@
     <title>CAREER PATH CONNECT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-</head>g
+</head>
 
 <body>
 
-<header>
-    <nav class="main-nav">
-        <div class="logo">
-            <a href="index.html">CAREER-PATH CONNECT</a>
-        </div>
+    <!-- Toggle Button -->
+<div class="menu-toggle" onclick="toggleMenu()">
+     &#9776;
+</div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="applications.html">Applications</a></li>
-            <li><a href="companies.html">Companies</a></li>
-            <li><a href="vacancies.html">Job vacancies</a></li>
-        </ul>
-    </nav>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="applicationsform.html">📝 Applications</a></li>
+        <li><a href="companies.html">🏢 Companies</a></li>
+        <li><a href="vacancies.html">💼 Job Vacancies</a></li>
+        <li><a href="#">⚙ Settings</a></li>
+    </ul>
+</div>
 
 
 
 
 <section class="content">
     <h1>Your Pathway To Opportunity</h1>
-
     <hr>
 
     <section id="discover">
@@ -47,36 +48,50 @@
 <section id="image">
     <section id="image-overlay">
 
-        <nav class="main-nav">
-        <div class="logo">
-            <a href="index.html">CAREER-PATH CONNECT</a>
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="applications.html">Applications</a></li>
-            <li><a href="companies.html">Companies</a></li>
-            <li><a href="vacancies.html">Job vacancies</a></li>
-        </ul>
-    </nav>
-
-    
         <section id="image-content">
             <h2>Join Our Organization</h2>
+        
+
             <p>
-                Submit your application online easily, There are various big companies
-                and Organizations that send their job vacancies because we are a trusted
-                and qualified source known for bringing the best
-            </p>
+                Submit your application online easily...</p>
+
+            <div class="login-container">
+                <h2>Login</h2>
+
+                <form>
+                    <input type="email" placeholder="Enter Email" required>
+                    <input type="password" placeholder="Enter Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                </form>
+            </div>
+
         </section>
+
     </section>
 </section>
 
-</header>
 
-<footer>
-    <p>© 2026 Career Path Connect</p>
-</footer>
+
+
+<script>
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+}
+</script>
+
+<script>
+document.addEventListener("click", function(event) {
+    const sidebar = document.getElementById("sidebar");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (!sidebar.contains(event.target) && 
+        !toggle.contains(event.target)) {
+        sidebar.classList.remove("active");
+    }
+});
+</script>
 
 </body>
 </html>
