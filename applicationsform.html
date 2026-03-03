@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-    <nav class="main-nav">
-        <div class="logo">
-            <a href="index.html">CAREER-PATH CONNECT</a>
-        </div>
+      <!-- Toggle Button -->
+<div class="menu-toggle" onclick="toggleMenu()">
+     &#9776;
+</div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="applicationsform.html">Applications</a></li>
-            <li><a href="companies.html">Companies</a></li>
-            <li><a href="vacancies.html">Job vacancies</a></li>
-            <li><a href="table.html">Job Requirements</a></li>
-        </ul>
-    </nav>
-</header>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="applicationsform.html">📝 Applications</a></li>
+        <li><a href="companies.html">🏢 Companies</a></li>
+        <li><a href="vacancies.html">💼 Job Vacancies</a></li>
+        <li><a href="#">⚙ Settings</a></li>
+    </ul>
+</div>
       <hr>
           <h1>Welcome to the Job Application Portal</h1>
          <h3>Apply online, let us find the vacancy that fits your field of work, all you have to do is track your application</h3>
@@ -115,9 +115,24 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
 
  </main>
 
- <footer>
-    <p>© 2026 Career Path Connect</p>
-</footer>
+ <script>
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+}
+</script>
+
+<script>
+document.addEventListener("click", function(event) {
+    const sidebar = document.getElementById("sidebar");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (!sidebar.contains(event.target) && 
+        !toggle.contains(event.target)) {
+        sidebar.classList.remove("active");
+    }
+});
+</script>
 
 
 </body>
